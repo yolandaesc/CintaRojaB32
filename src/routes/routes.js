@@ -39,7 +39,7 @@ router.get("/api/v1/vehiculoById/", (req, res, next) => {
 
 router.get("/api/v1/busqueda/vehiculo", (req, res, next) => {
     const { q } = req.query;
-    Vehiculo.find({ title: q }).exec()
+    Vehiculo.find({ nombre: q }).exec()
         .then(vehiculo => {
             vehiculo.length > 0
                 ? res.status(200).send(vehiculo)
