@@ -2,24 +2,16 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Schema.ObjectId; // Generar string aleatorio
 
-const movieSchema = new Schema({
-    movieId: ObjectId,
-    title: String,
+const vehiculoSchema = new Schema({
+    vehiculoId: ObjectId,
+    nombre: String,
     year: Number,
-    description: {
-        type: String,
-    },
-    image: [String],
-    theme: {
-        type: String,
-        enum: ["comedia", "drama", "terror", "acción"],
-    },
-    director: {
-        type: String,
-        default: "Gerardo Medina"
-    }
+    kilometraje: Number,
+    description: String,
+    ultServicio: String,
+    image: [String]
 });
 
-const Movie = mongoose.model('Movie', movieSchema);
+const Vehiculo = mongoose.model('Vehiculo', vehiculoSchema);
 
-module.exports = { Movie }
+module.exports = { Vehiculo }
