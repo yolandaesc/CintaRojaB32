@@ -2,6 +2,7 @@ const express = require("express");
 const path = require('path');
 const router = express.Router();
 const { Movie } = require("../models/movie");
+const { Vehiculo } = require("../models/vehiculo");
 
 router.get("/", (req, res, next) => {
     res.status(200).sendFile(path.resolve("src/views/index.html"));
